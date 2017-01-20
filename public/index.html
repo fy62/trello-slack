@@ -2,8 +2,30 @@
 <html>
   <head>
   </head>
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="https://trello.com/1/client.js?key=299071bc867e6ef0e480d8c0220dd92b"></script>
+  <script>
+    function authenticationSuccess() {
+    console.log('authentication successful,')
+    // whatever you want to do with your token.
+    // if you can do everything client-side, there are other wrapper functions
+    // so you never need to use the token directly if you don't want to.
+}
+    var authenticationFailure = function() { console.log('Failed authentication'); };
+
+    Trello.authorize({
+      type: 'redirect',
+      name: 'trello-slack',
+      scope: {
+        read: 'true',
+        write: 'true' },
+      expiration: 'never',
+      success: authenticationSuccess,
+      error: authenticationFailure
+    });
+  </script>
   <body>
     <div id=main></div>
-    <script async defer src=/bundle.js></script>    
+    <script async defer src=/bundle.js></script>
   </body>
-</html> 
+</html>
