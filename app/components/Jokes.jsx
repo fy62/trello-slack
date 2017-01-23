@@ -2,33 +2,6 @@ import React, { Component } from 'react';
 
 export default class BonesJokes extends Component {
   componentDidMount() {
-    // var authenticationSuccess = function() { console.log('Successful authentication'); };
-    // var authenticationFailure = function() { console.log('Failed authentication'); };
-
-    // Trello.authorize({
-    //   type: 'popup',
-    //   name: 'Getting Started Application',
-    //   scope: {
-    //     read: 'true',
-    //     write: 'true' },
-    //   expiration: 'never',
-    //   success: authenticationSuccess,
-    //   error: authenticationFailure
-    // });
-
-    var myList = '58826534776ac718f3338a35';
-    var creationSuccess = function(data) {
-      console.log('Card created successfully. Data returned:' + JSON.stringify(data));
-    };
-    var newCard = {
-      name: 'New Test Card',
-      desc: 'This is the description of our new card.',
-      // Place this card at the top of our list
-      idList: myList,
-      pos: 'top'
-    };
-    Trello.post('/cards/', newCard, creationSuccess);
-
     this.nextJoke()
   }
 

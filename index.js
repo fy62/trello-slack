@@ -23,7 +23,6 @@ const reasonableName = /^[a-z0-9\-_]+$/
 if (!reasonableName.test(pkg.name)) {
   console.error(chalk.red(nameError))
 }
-
 // This will load a secrets file from
 //
 //      ~/.your_app_name.env.js
